@@ -35,7 +35,7 @@ def readMouse(event):
     game = controller.activeGame
     mousepos = pg.mouse.get_pos()
 
-    drawSelection()
+    # drawSelection()
 
     if event.type == pg.MOUSEBUTTONDOWN:
         um = getUnderMouse(mousepos) ##underneath mouse position sprite array
@@ -66,8 +66,8 @@ def readMouse(event):
     elif event.type == pg.MOUSEBUTTONUP:
 
         if event.button == LEFT:
-            selection(mousepos)
-
+            # selection(mousepos)
+            pass
 
 
         

@@ -59,8 +59,8 @@ class Unit(pg.sprite.Sprite):
         else:
             return False
 
-    def checkMove(self):
-        newpos = self.pos + self.vel
+    def checkMove(self,vect):
+        newpos = self.pos + vect
         for sprite in controller.activeGame.all_sprites:
             if sprite.rect.collidepoint(newpos) and sprite is not self:
                 return False
@@ -72,7 +72,11 @@ class Unit(pg.sprite.Sprite):
         # print self.goTo
         if self.atDest() == True:
             self.vel = vec(0,0)
-        if self.checkMove():
+        if self.checkMove(self.vel):
             self.pos = self.pos + self.vel
+        # else:
+        #     rvrsvel = vec(-5*self.vel.x,-5*self.vel.y)
+        #     if(self.checkMove(rvrsvel)):
+        #         self.pos = self.pos + rvrsvel
 
         self.rect.center = self.pos
