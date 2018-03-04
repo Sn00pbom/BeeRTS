@@ -20,9 +20,6 @@ class Game():
     def new(self):
         self.all_sprites = pg.sprite.Group()
 
-        # self.player = Player(settings.GAME_WIDTH, settings.GAME_HEIGHT)
-        # self.unit = Unit(settings.GAME_WIDTH,settings.GAME_HEIGHT,3)
-        # self.enemy = Enemy(settings.GAME_WIDTH,settings.GAME_HEIGHT,2)
         self.unit1 = Unit(10,4,10,10)
         self.unit2 = Unit(10, 4, 10, 110)
         self.unit3 = Unit(10, 4, 10, 210)

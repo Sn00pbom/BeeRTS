@@ -4,5 +4,7 @@ import pygame as pg
 class Enemy(Unit):
 
     def __init__(self,hp,speed,x,y):
+
         super(Enemy,self).__init__(hp,speed,x,y)
+        self.image = pg.image.load("./assets/units/unit_enemy.png")
         # self.pos = pg.math.Vector2(x,y)
