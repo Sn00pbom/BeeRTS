@@ -12,8 +12,18 @@ class Unit(pg.sprite.Sprite):
         self.vel = vec(0, 0)
         self.speed = speed
 
+        self.side = -1 #Unit class will never be created, always an inherited class
+
+        self.image = pg.image.load("./assets/effects/blood.png")#placeholder sprite for exception
+
+        if self.side == 0:
+            self.image = pg.image.load("./assets/units/unit_worker.png")
+        elif self.side == 1:
+            self.image = pg.image.load("./assets/units/unit_enemy.png")
+        else:
+            self.image = pg.image.load("./assets/effects/blood.png")#placeholder sprite for exception
         pg.sprite.Sprite.__init__(self)
-        self.image = pg.image.load("./assets/units/unit_worker.png")
+
         self.rect = self.image.get_rect()
 
         self.rect.center = self.pos

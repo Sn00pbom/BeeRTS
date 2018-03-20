@@ -3,7 +3,7 @@ import settings
 from inputs import keyboard
 from units.unit import Unit
 from inputs import mouse
-from units.enemy import Enemy
+from units import *
 from units.squad import Squad
 
 class Game():
@@ -20,11 +20,15 @@ class Game():
     def new(self):
         self.all_sprites = pg.sprite.Group()
 
-        self.unit1 = Unit(10,4,10,10)
-        self.unit2 = Unit(10, 4, 10, 110)
-        self.unit3 = Unit(10, 4, 10, 210)
+        # self.unit1 = Unit(10,4,10,10)
+        # self.unit2 = Unit(10, 4, 10, 110)
+        # self.unit3 = Unit(10, 4, 10, 210)
+        self.unit1 = Bee1(10,3,30,30,0)
+        self.unit2 = Bee1(10,3,200,200,0)
+        self.unit3 = Bee1(10,3,300,300,0)
+        self.enemy = Bee1(10,3,400,400,0)
 
-        self.enemy = Enemy(20,4,200,200)
+
         self.all_sprites.add(self.unit1)
         self.all_sprites.add(self.unit2)
         self.all_sprites.add(self.unit3)
@@ -34,7 +38,7 @@ class Game():
 
     def run(self):
         self.playing = True
-        while self.playing:
+        while self.playing: #primary game loop
             self.events()
             self.update()
             self.draw()
